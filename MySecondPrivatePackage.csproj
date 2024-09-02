@@ -10,7 +10,7 @@
     <Authors>Silvio Sebastiany</Authors>
     <Company>silvio.io</Company>
     <PackageDescription>Meu segundo pacote de exemplo</PackageDescription>
-    <RepositoryUrl>https://github.com/SilvioSebastiany/my-second-private-package</RepositoryUrl>
+    <RepositoryUrl>https://github.com/SilvioSebastiany/my-second-private-package-teste</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
