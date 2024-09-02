@@ -13,6 +13,7 @@ jobs:
       packages: write
 
     steps:
+    - name: Checkout Code
     - uses: actions/checkout@main
 
     - name: Set up .NET Core                      # instala o dotnet
@@ -23,13 +24,16 @@ jobs:
     - name: Add GitHub Packages Source
       run: dotnet nuget add source https://nuget.pkg.github.com/SilvioSebastiany/index.json -n github -u silviosebastiany -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
 
-    - name: Build with dotnet                     # constroi a aplicação
-      run: dotnet pack --configuration Release
+   - name: Restore Dependencies
+      run: dotnet restore
+
+    - name: Build Application
+      run: dotnet build --configuration Release --no-restore
 
     - name: Create the Package                    #Cria e faz um pacote da aplicação
-      run: dotnet pack --configuration  Release
+      run: dotnet pack --configuration Release --no-build
 
-    - name: Publish     #GITHUB_TOKEN: é uma variavel especial, para configuração de autenticação
-      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json
+    - name: Publish Package     #GITHUB_TOKEN: é uma variavel especial, para configuração de autenticação
+      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json --skip-duplicate --timeout 600
 
    
