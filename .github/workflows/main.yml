@@ -33,6 +33,6 @@ jobs:
       run: dotnet pack --configuration Release --no-build
 
     - name: Publish Package     #GITHUB_TOKEN: é uma variavel especial, para configuração de autenticação
-      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.NUGET_TOKEN_SILVIO }} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json --skip-duplicate --timeout 600
+      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.silvio_token}} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json --skip-duplicate --timeout 600
 
    
