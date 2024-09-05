@@ -21,7 +21,7 @@ jobs:
         dotnet-version: '7.0.x'
 
     - name: Add GitHub Packages Source
-      run: dotnet nuget add source https://nuget.pkg.github.com/SilvioSebastiany/index.json -n github -u silviosebastiany -p ${{ secrets.NUGET_TOKEN_SILVIO }} --store-password-in-clear-text
+      run: dotnet nuget add source https://nuget.pkg.github.com/SilvioSebastiany/index.json -n github -u silviosebastiany -p ${{ secrets.NUGET_TOKEN_SILVIO2 }} --store-password-in-clear-text
 
     - name: Restore Dependencies
       run: dotnet restore
@@ -33,6 +33,6 @@ jobs:
       run: dotnet pack --configuration Release --no-build
 
     - name: Publish Package     #GITHUB_TOKEN: é uma variavel especial, para configuração de autenticação
-      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.NUGET_TOKEN_SILVIO }} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json --skip-duplicate --timeout 600
+      run: dotnet nuget push "bin/Release/*.nupkg" -k ${{ secrets.NUGET_TOKEN_SILVIO2 }} -s https://nuget.pkg.github.com/SilvioSebastiany/index.json --skip-duplicate --timeout 600
 
    
