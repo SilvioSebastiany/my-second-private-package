@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>MySecondPrivatePackage_Silvio</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Silvio Sebastiany</Authors>
     <Company>silvio.io</Company>
     <PackageDescription>Meu segundo pacote de exemplo</PackageDescription>
