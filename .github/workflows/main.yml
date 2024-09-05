@@ -23,8 +23,8 @@ jobs:
     - name: Add GitHub Packages Source
       run: dotnet nuget add source https://nuget.pkg.github.com/SilvioSebastiany/index.json -n github -u ${{ github.actor }} -p ${{ secrets.NUGET_TOKEN_SILVIO2 }} --store-password-in-clear-text
 
-    - name: Restore Dependencies
-      run: dotnet restore
+    ##- name: Restore Dependencies
+    ##  run: dotnet restore
 
     - name: Build Application
       run: dotnet build --configuration Release --no-restore
