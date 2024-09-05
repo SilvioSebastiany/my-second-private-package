@@ -12,11 +12,11 @@ jobs:
       packages: write
 
     steps:
-    #- name: Checkout Code
-    - uses: actions/checkout@main
+    - name: Checkout Code
+    - uses: actions/checkout@v3                   # Use a versão mais recente da action (v3)
 
     - name: Set up .NET Core                      # instala o dotnet
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3               # Use a versão mais recente da action (v3)
       with:
         dotnet-version: '7.0.x'
 
